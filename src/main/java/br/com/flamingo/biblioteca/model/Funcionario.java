@@ -1,6 +1,7 @@
 package br.com.flamingo.biblioteca.model;
 
 import javax.persistence.Column;
+import javax.persistence.Embedded;
 import javax.persistence.Id;
 
 import org.hibernate.validator.constraints.NotEmpty;
@@ -16,6 +17,9 @@ public class Funcionario {
 	@Column(name = "nome_funcionario")
 	@NotEmpty(message = "*Por favor, forneça o !")
 	private String nomeFuncionario;
+	
+	@Embedded
+	private TipoFuncionario tipoFuncionario;
 	
 	@Column(name = "email_funcionario")
 	@NotEmpty(message = "*Por favor, forneça o título do livro!")

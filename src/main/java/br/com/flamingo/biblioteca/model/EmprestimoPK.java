@@ -5,9 +5,6 @@ import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -15,11 +12,6 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class EmprestimoPK implements Serializable {
 
 	private static final long serialVersionUID = -7738397276670855586L;
-	
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id_emprestimo")
-	private int idEmprestimo;
 	
 	@Column(name = "data_retirada_livro")
 	@NotEmpty(message = "*Por favor, forneça a data de retirada do livro!")
@@ -29,12 +21,6 @@ public class EmprestimoPK implements Serializable {
 	@NotEmpty(message = "*Por favor, forneça a data de entrega do livro!")
 	private Date dataEntrega;
 	
-	public int getIdEmprestimo() {
-		return idEmprestimo;
-	}
-	public void setIdEmprestimo(int idEmprestimo) {
-		this.idEmprestimo = idEmprestimo;
-	}
 	public Date getDataRetirada() {
 		return dataRetirada;
 	}
