@@ -2,31 +2,33 @@ package br.com.flamingo.biblioteca.model;
 
 import javax.persistence.Column;
 import javax.persistence.Embedded;
+import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.NotEmpty;
-import org.hibernate.validator.constraints.br.CPF;
 
+@Entity
+@Table(name = "Funcionario")
 public class Funcionario {
 	
 	@Id
-	@CPF
 	@Column(name="cpf_funcionario")
 	private String cpfFuncionario;
 	
 	@Column(name = "nome_funcionario")
-	@NotEmpty(message = "*Por favor, forneça o !")
+	@NotEmpty(message = "*Por favor, forneça o nome do funcionário!")
 	private String nomeFuncionario;
 	
 	@Embedded
 	private TipoFuncionario tipoFuncionario;
 	
 	@Column(name = "email_funcionario")
-	@NotEmpty(message = "*Por favor, forneça o título do livro!")
+	@NotEmpty(message = "*Por favor, forneça o email do funcionário!")
 	private String emailFuncionario;
 	
 	@Column(name = "titulo_livro")
-	@NotEmpty(message = "*Por favor, forneça o título do livro!")
+	@NotEmpty(message = "*Por favor, forneça a senha do funcionário!")
 	private String senhaFuncionario;
 	
 	public String getCpfFuncionario() {

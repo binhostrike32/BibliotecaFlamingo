@@ -1,11 +1,14 @@
 package br.com.flamingo.biblioteca.model;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
-
+@Entity
+@Table(name = "Livro")
 public class Livro {
 	
 	@Id
